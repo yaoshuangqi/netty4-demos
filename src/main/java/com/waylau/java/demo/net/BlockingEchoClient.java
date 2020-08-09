@@ -22,6 +22,7 @@ public class BlockingEchoClient {
 	 * @param args
 	 */
 	public static void main(String[] args) {
+	    args = new String[]{"localhost","7"};
 		if (args.length != 2) {
             System.err.println(
                 "用法: java BlockingEchoClient <host name> <port number>");
@@ -45,7 +46,7 @@ public class BlockingEchoClient {
             String userInput;
             while ((userInput = stdIn.readLine()) != null) {
                 out.println(userInput);
-                System.out.println("echo: " + in.readLine());
+                System.out.println("接收server消息: " + in.readLine());
             }
         } catch (UnknownHostException e) {
             System.err.println("不明主机，主机名为： " + hostName);

@@ -55,14 +55,14 @@ public class BlockingEchoServer {
 				
 				// 接收客户端的信息
 				BufferedReader in = 
-						new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));) {
+						new BufferedReader(new InputStreamReader(clientSocket.getInputStream()))) {
 			String inputLine;
 			while ((inputLine = in.readLine()) != null) {
 				
 				// 发送信息给客户端
-				out.println(inputLine);
+				out.println("收到");
 				System.out.println(
-						"BlockingEchoServer -> " + clientSocket.getRemoteSocketAddress() + ":" + inputLine);
+						"接收打客户端信息 -> " + clientSocket.getRemoteSocketAddress() + ":" + inputLine);
 			}
 		} catch (IOException e) {
 			System.out.println(
