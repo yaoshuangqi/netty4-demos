@@ -1,4 +1,4 @@
-package com.yaosq.bio.nio;
+package com.yaosq.nio;
 
 import java.io.IOException;
 import java.net.InetSocketAddress;

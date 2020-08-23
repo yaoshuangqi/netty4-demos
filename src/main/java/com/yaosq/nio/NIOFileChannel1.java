@@ -1,7 +1,6 @@
-package com.yaosq.bio.nio;
+package com.yaosq.nio;
 
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
