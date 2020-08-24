@@ -32,13 +32,14 @@ public class NIOSocketChannel1 {
         byteBuffers[1] = ByteBuffer.allocate(3);
 
         //等待客户端的连接（Telnet）
-        SocketChannel socketChannel = serverSocketChannel.accept();
+        SocketChannel socketChannel = serverSocketChannel.accept();//默认阻塞，第一次
+        //socketChannel.configureBlocking(false);
         int msgLength = 8; //假定从客户端接受8个字节
         //循环的读取
         while (true) {
             int byteRead = 0;
             while (byteRead < msgLength) {
-                long l = socketChannel.read(byteBuffers);
+                long l = socketChannel.read(byteBuffers);//第二次，子线程阻塞
                 byteRead += l; //累计读取的字节数
                 System.out.println("byteRead= " + byteRead);
                 //使用流打印，看看当前这个buffer的position和limit

@@ -25,7 +25,7 @@ public class ByteBufferDemo {
 		// 添加一些数据到缓冲区中
 		System.out.println("------------添加数据到缓冲区------------");
 
-		String s = "love";
+		String s = "lovelove";
 		buffer.put(s.getBytes());
 		printBuffer(buffer);
 
@@ -44,7 +44,7 @@ public class ByteBufferDemo {
 		buffer.get(bytes);
 		printBuffer(buffer);
 
-		// 执行compact
+		// 执行compact  重置字节到缓存区的开头，索引不一定是0
 		System.out.println("------------执行compact------------");
 		buffer.compact();
 		printBuffer(buffer);

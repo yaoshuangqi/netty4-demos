@@ -35,5 +35,7 @@ public class NIOFileChannel2 {
 
         //还可以使用transferFrom()方式进行拷贝
 
+        //transferTo 采用零拷贝
+
     }
 }
