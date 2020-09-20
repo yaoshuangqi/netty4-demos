@@ -52,7 +52,10 @@ public class NonBlokingEchoServer {
 
 		while (true) {
 			try {
-				selector.select();
+				if(selector.select(1000) == 0){
+					System.out.println("==> 没有客户端连接,等待中...");
+					continue;
+				}
 			} catch (IOException e) {
 				System.out.println("NonBlockingEchoServer异常!" + e.getMessage());
 			}
@@ -117,6 +120,7 @@ public class NonBlokingEchoServer {
 					}
 				}
 			}
+			System.out.println("==> end.....");
 		}
 	}
 
