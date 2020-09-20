@@ -19,7 +19,7 @@ public class HttpServerInitializer extends ChannelInitializer<SocketChannel> {
         //得到管道
         ChannelPipeline pipeline = socketChannel.pipeline();
 
-        //加入一个netty提供的编解码器
+        //加入一个netty提供的http编解码器
         pipeline.addLast("myHttpServerCodec", new HttpServerCodec());
 
         //增加一个自定义的处理器

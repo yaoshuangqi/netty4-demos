@@ -53,6 +53,7 @@ public class HttpRequestHandler extends SimpleChannelInboundHandler<FullHttpRequ
 	@Override
 	public void channelRead0(ChannelHandlerContext ctx, FullHttpRequest request) throws Exception {
 		if (wsUri.equalsIgnoreCase(request.uri())) {
+			//将消息显示的传递下一个handler
 			ctx.fireChannelRead(request.retain()); // （2）
 		} else {
 			if (HttpUtil.is100ContinueExpected(request)) {

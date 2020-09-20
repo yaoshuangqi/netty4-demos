@@ -27,6 +27,7 @@ public class WebSocketChatServerInitializer extends
 		//提供大文件传输功能（netty自带）
 		pipeline.addLast(new ChunkedWriteHandler());
 
+		//做一个请求的过滤。符合/ws的访问路径
 		pipeline.addLast(new HttpRequestHandler("/ws"));
 		//传入ws路径，将Http协议升级成为ws协议 （netty自带）
 		pipeline.addLast(new WebSocketServerProtocolHandler("/ws"));

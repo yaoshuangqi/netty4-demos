@@ -27,7 +27,7 @@ public class HttpServerHandler extends SimpleChannelInboundHandler<HttpObject> {
             System.out.println("==>pipeline hashCode="+channelHandlerContext.pipeline().hashCode()+", HttpServerHandler hash="+this.hashCode());
 
             HttpRequest request = (HttpRequest) httpObject;
-            System.out.println("==> uri="+request.getUri());
+            System.out.println("==> uri="+request.uri());
             //如果需要进行过滤，直接return即可，无需响应
         }
 

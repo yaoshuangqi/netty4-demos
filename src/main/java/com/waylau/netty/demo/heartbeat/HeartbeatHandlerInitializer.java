@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class HeartbeatHandlerInitializer extends ChannelInitializer<Channel> {
 
-	private static final int READ_IDEL_TIME_OUT = 4; // 读超时
+	private static final int READ_IDEL_TIME_OUT = 14; // 读超时
 	private static final int WRITE_IDEL_TIME_OUT = 5;// 写超时
 	private static final int ALL_IDEL_TIME_OUT = 7; // 所有超时
 
