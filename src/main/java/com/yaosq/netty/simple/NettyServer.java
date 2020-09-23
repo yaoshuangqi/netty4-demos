@@ -51,7 +51,7 @@ public class NettyServer {
             });
 
             //关闭通道并进行监听
-            //channelFuture.channel().closeFuture().sync();
+            channelFuture.channel().closeFuture().sync();
 
         } finally {
             bossGroup.shutdownGracefully();

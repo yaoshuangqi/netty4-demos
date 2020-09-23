@@ -30,7 +30,7 @@ public class NettyClient {
                         }
                     });
             System.out.println("==> 客户端，ok....");
-            ChannelFuture channelFuture = bootstrap.connect("127.0.0.1", 8082).sync();
+            ChannelFuture channelFuture = bootstrap.connect("127.0.0.1", 6666).sync();
             channelFuture.channel().closeFuture().sync();
         } finally {
             eventExecutors.shutdownGracefully();

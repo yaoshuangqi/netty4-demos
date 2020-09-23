@@ -21,7 +21,7 @@ public class EchoServerChannelInitializer extends ChannelInitializer<SocketChann
 	protected void initChannel(SocketChannel ch) throws Exception {
 		
 		// 先添加SslHandler
-		String pkPath = System.getProperties().getProperty("user.dir") + "/src/main/resources/ssl/nettyServer.jks";
+		String pkPath = System.getProperties().getProperty("user.dir") + "/src/main/resources/ssl/NettyServer.jks";
 		String password = "defaultPass";
 		SSLEngine engine = SslContextFactory.getServerContext(pkPath, pkPath, password).createSSLEngine();
 		engine.setUseClientMode(false); // 设置为服务器模式

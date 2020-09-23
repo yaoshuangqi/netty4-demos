@@ -18,12 +18,22 @@ public class NettyClientHandler extends ChannelInboundHandlerAdapter {
     public void channelActive(ChannelHandlerContext ctx) throws Exception {
 
         System.out.println("==> client, 已经就绪，准备开始发送消息");
-        ctx.writeAndFlush(Unpooled.copiedBuffer("你好，服务，吗ios", CharsetUtil.UTF_8));
+        //while (true){
+            ctx.writeAndFlush(Unpooled.copiedBuffer("你好，服务，吗ios", CharsetUtil.UTF_8));
+            System.out.println("===> ddde333333333333333");
+           // Thread.sleep(2000);
+       // }
     }
 
     @Override
     public void channelRead(ChannelHandlerContext ctx, Object msg) {
         System.out.println("服务器回复的消息：" + ((ByteBuf)msg).toString(CharsetUtil.UTF_8));
+    }
+
+    @Override
+    public void channelReadComplete(ChannelHandlerContext ctx) throws Exception {
+        System.out.println("===>  dddddddddddd");
+        super.channelReadComplete(ctx);
     }
 
     @Override
