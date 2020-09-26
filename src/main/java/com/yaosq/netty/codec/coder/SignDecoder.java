@@ -13,11 +13,11 @@ import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
  * @createtime 2020/9/23 20:09
  */
 public class SignDecoder extends LengthFieldBasedFrameDecoder {
-    private static final int MAX_FRAME_LENGTH = 1024 * 1024;
-    private static final int LENGTH_FIELD_LENGTH = 1;
-    private static final int LENGTH_FIELD_OFFSET = 4;
-    private static final int LENGTH_ADJUSTMENT = 0;
-    private static final int INITIAL_BYTES_TO_STRIP = 0;
+    private static final int MAX_FRAME_LENGTH = 1024 * 1024;//桢的最大长度
+    private static final int LENGTH_FIELD_LENGTH = 1;//桢的长度
+    private static final int LENGTH_FIELD_OFFSET = 4;//起始偏移量
+    private static final int LENGTH_ADJUSTMENT = 0;//调整值
+    private static final int INITIAL_BYTES_TO_STRIP = 0;//跳过
 
     private static final int HEADER_SIZE = 5;
     private byte msgType; // 消息类型
